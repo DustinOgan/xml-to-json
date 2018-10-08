@@ -39,12 +39,20 @@ public class XmlProccessor {
         return result;
     }
 
-    public static TestStepResults proccessXmlToClass(String filePath) throws JAXBException {
+    public static void processTestSuiteResultsClassToXml(TestSuiteResults result)throws JAXBException, FileNotFoundException{    
+        JAXBContext contextObj = JAXBContext.newInstance(TestSuiteResults.class);
+        Marshaller marshallerObj = contextObj.createMarshaller();
+        marshallerObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        marshallerObj.marshal(result, new FileOutputStream("TestSuiteResults.xml"));        
+    }
+
+    public static TestSuiteResults proccessXmlToClass(String filePath) throws JAXBException {
         File xmlFile = new File(filePath);
-        JAXBContext jaxbContext = JAXBContext.newInstance(TestStepResults.class);
+        JAXBContext jaxbContext = JAXBContext.newInstance(TestSuiteResults.class);
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-        TestStepResults result = (TestStepResults) unmarshaller.unmarshal(xmlFile);
+        TestSuiteResults result = (TestSuiteResults) unmarshaller.unmarshal(xmlFile);
         return result;
     }
+    
 
 }

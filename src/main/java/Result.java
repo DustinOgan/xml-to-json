@@ -37,17 +37,3 @@ public class Result{
     String timeTaken;
 
 }
-
-
-/*
-    <?xml version="1.0" encoding="UTF-8"?>
-    <result>
-        <message>Step 1 [GET : /Entitlements?mediaId={visualId}] FAIL: took 221 ms
-        -> [Match content of [statusCode]] Comparison failed. Path: [$['statusCode']]; Expected value: [201]; Actual value: [200].</message>
-        <name>GET : /Entitlements?mediaId={visualId}</name>
-        <order>2</order>
-        <started>21:25:53.117</started>
-        <status>FAIL</status>
-        <timeTaken>221</timeTaken>
-    </result>
-*/
