@@ -22,7 +22,22 @@ public class XmlProccessor {
         Marshaller marshallerObj = contextObj.createMarshaller();
         marshallerObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         marshallerObj.marshal(result, new FileOutputStream("TestStepResult.xml"));        
-}
+    }
+
+    public static void processTestCaseClassToXml(TestCase result)throws JAXBException, FileNotFoundException{    
+        JAXBContext contextObj = JAXBContext.newInstance(TestCase.class);
+        Marshaller marshallerObj = contextObj.createMarshaller();
+        marshallerObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        marshallerObj.marshal(result, new FileOutputStream("TestCase.xml"));        
+    }
+
+    public static TestCase proccessXmlToTestCaseClass(String filePath) throws JAXBException {
+        File xmlFile = new File(filePath);
+        JAXBContext jaxbContext = JAXBContext.newInstance(TestCase.class);
+        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+        TestCase result = (TestCase) unmarshaller.unmarshal(xmlFile);
+        return result;
+    }
 
     public static TestStepResults proccessXmlToClass(String filePath) throws JAXBException {
         File xmlFile = new File(filePath);

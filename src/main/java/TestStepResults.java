@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 
-@XmlRootElement(name ="testStepResults")
+
 @XmlAccessorType(XmlAccessType.FIELD)
 public class TestStepResults{
     
