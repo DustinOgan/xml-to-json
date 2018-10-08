@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "xml-to-json",
+                "projectName": "xml-to-json",
+                "workingDirectory": "s:\\Documents\\xml-to-json",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "xml-to-json",
+                "projectName": "xml-to-json",
+                "workingDirectory": "s:\\Documents\\xml-to-json",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
