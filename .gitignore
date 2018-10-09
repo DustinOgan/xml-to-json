@@ -8,3 +8,6 @@ gradle.properties
 .*
 build/*S
 TestSuiteResults.xml
+**/bin/**
+**/obj/**
+.gradle/**
