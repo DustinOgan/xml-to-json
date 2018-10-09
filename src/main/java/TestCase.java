@@ -37,4 +37,10 @@ public class TestCase{
     
     @XmlElement
     ArrayList<TestStepResults> testStepResults;
+
+    @XmlElement
+    ArrayList<TestStepParameters> testStepParameters;
+
+    @XmlElement
+    ArrayList<FailedTestSteps> failedTestSteps;
 }

@@ -9,37 +9,54 @@ public class XmlProccessorTest {
 
     @Test
     public void testClassToXml() throws FileNotFoundException, JAXBException {
-        TestSuiteResults testSuiteResults = buildTestSuiteResults();
-        XmlProccessor.processTestSuiteResultsClassToXml(testSuiteResults);
+        TestSuiteResults testSuiteResults = buildFakeData();
+        // TestSuiteResults testSuiteResults = buildTestSuiteResults();
+        XmlProccessor.proccessClassToXml(testSuiteResults);
     }
 
     @Test
     public void testXmlToClass() throws JAXBException {
-        TestSuiteResults fileResult = XmlProccessor.proccessXmlToClass("TestSuiteResults.xml");
+        TestSuiteResults fileResult = XmlProccessor.proccessXmlToClass("TestSuiteResultSample.xml");
         ArrayList<TestCase> testCaseArray = fileResult.getTestCase();
         TestCase singleTestCase = testCaseArray.get(0);
         ArrayList<TestStepResults> testStepResultsList = singleTestCase.getTestStepResults();
         TestStepResults testStepResult = testStepResultsList.get(0);
         Result singleResult = testStepResult.getResult().get(0);
-        assertTrue(singleResult.name.equals("name"));
+        assertTrue(singleResult.status.equals("FAIL"));
 
     }
 
-    private TestSuiteResults buildTestSuiteResults() {
+    private TestSuiteResults buildFakeData(){
+        return
+        buildTestSuiteResults(buildTestCase(buildTestStepResults(buildResult())));
+        
+        
+    }
+    private ArrayList<Result> buildResult(){
         Result result = Result.builder().message("message").name("name").order("order").started("started")
-                .status("status").timeTaken("timeTaken").build();
+        .status("status").timeTaken("timeTaken").build();
         ArrayList<Result> results = new ArrayList<Result>();
         results.add(result);
-        TestStepResults testStepResult = TestStepResults.builder().result(results).build();
+        return results; 
+    }
+
+    private ArrayList<TestStepResults> buildTestStepResults(ArrayList<Result> result){
+        TestStepResults testStepResult = TestStepResults.builder().result(result).build();
         ArrayList<TestStepResults> testStepResultArray = new ArrayList<TestStepResults>();
         testStepResultArray.add(testStepResult);
+        return testStepResultArray;
+    }
 
+    private ArrayList<TestCase> buildTestCase(ArrayList<TestStepResults> testStepResults){
         TestCase tcase = TestCase.builder().reason("reason").startTime("startTime").status("status")
-                .testCaseId("testCaseId").testCaseName("testCaseName").testStepResults(testStepResultArray).build();
+                .testCaseId("testCaseId").testCaseName("testCaseName").testStepResults(testStepResults).build();
         ArrayList<TestCase> testCaseArray = new ArrayList<TestCase>();
         testCaseArray.add(tcase);
+        return testCaseArray;
+    }
+    private TestSuiteResults buildTestSuiteResults(ArrayList<TestCase> testCases) {
         TestSuiteResults testSuiteResults = TestSuiteResults.builder().name("name").message("message").order("order")
-                .started("started").status("status").testCase(testCaseArray).timeTaken("timeTaken").build();
+                .started("started").status("status").testCase(testCases).timeTaken("timeTaken").build();
         return testSuiteResults;
     }
 

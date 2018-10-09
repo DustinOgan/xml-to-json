@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSuiteResults>
+  <testCase>
+    <reason>Failing due to failed test step</reason>
+    <startTime>21:25:53</startTime>
+    <status>FAIL</status>
+    <testCaseId>ec3addd2-078a-4fc3-ab4c-87139d4c8e16</testCaseId>
+    <testCaseName>Entitlements</testCaseName>
+    <timeTaken>848</timeTaken>
+    <testStepResults>
+      <result>
+        <message>Step 1 [GET : /Entitlements?mediaId={visualId}] FAIL: took 221 ms
+ -> [Match content of [statusCode]] Comparison failed. Path: [$['statusCode']]; Expected value: [201]; Actual value: [200].</message>
+        <name>GET : /Entitlements?mediaId={visualId}</name>
+        <order>2</order>
+        <started>21:25:53.117</started>
+        <status>FAIL</status>
+        <timeTaken>221</timeTaken>
+      </result>
+      <result>
+        <message>Step 2 [GET : /Entitlements/{entitlementId}/validate/{deviceName}] PASS: took 627 ms</message>
+        <name>GET : /Entitlements/{entitlementId}/validate/{deviceName}</name>
+        <order>3</order>
+        <started>21:25:53.416</started>
+        <status>PASS</status>
+        <timeTaken>627</timeTaken>
+      </result>
+      <result>
+        <message>Step 3 [DataSink] PASS: took 0 ms</message>
+        <name>DataSink</name>
+        <order>4</order>
+        <started>21:25:54.052</started>
+        <status>PASS</status>
+        <timeTaken>0</timeTaken>
+      </result>
+    </testStepResults>
+    <testStepParameters>
+      <parameters>
+        <iconPath>/rest_request_step.png</iconPath>
+        <testStepName>GET : /Entitlements?mediaId={visualId}</testStepName>
+      </parameters>
+      <parameters>
+        <iconPath>/rest_request_step.png</iconPath>
+        <testStepName>GET : /Entitlements/{entitlementId}/validate/{deviceName}</testStepName>
+      </parameters>
+      <parameters>
+        <iconPath>/datasink_step.png</iconPath>
+        <testStepName>DataSink</testStepName>
+      </parameters>
+    </testStepParameters>
+    <failedTestSteps>
+      <error>
+        <detail>Status: FAIL
+Time Taken: 221
+Size: 1169
+Timestamp: Sat Oct 06 21:25:53 EDT 2018
+TestStep: GET : /Entitlements?mediaId={visualId}
+
+----------------- Messages ------------------------------
+[Match content of [statusCode]] Comparison failed. Path: [$['statusCode']]; Expected value: [201]; Actual value: [200].
+
+----------------- Properties ------------------------------
+HTTP Version: HTTP/1.1
+Endpoint: https://et-qa.use.ucdp.net
+Method: GET
+StatusCode: 200
+URL: https://et-qa.use.ucdp.net/Entitlements?mediaId=199980100135002002178
+
+---------------- Request ---------------------------
+Connection: [Keep-Alive]
+User-Agent: [Apache-HttpClient/4.5.2 (Java/1.8.0_162)]
+Host: [et-qa.use.ucdp.net]
+Accept-Encoding: [gzip,deflate]
+Content-Length: [0]
+
+GET https://et-qa.use.ucdp.net/Entitlements?mediaId=199980100135002002178 HTTP/1.1
+Accept-Encoding: gzip,deflate
+Content-Length: 0
+Host: et-qa.use.ucdp.net
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.2 (Java/1.8.0_162)
+
+
+---------------- Response --------------------------
+Transfer-Encoding: [chunked]
+X-Content-Type-Options: [nosniff]
+Connection: [keep-alive]
+X-Download-Options: [noopen]
+Date: [Sun, 07 Oct 2018 01:25:53 GMT]
+X-Frame-Options: [SAMEORIGIN]
+ETag: [W/"491-SDuF2xumOiqyYi2MdsueHk8/tNI"]
+Access-Control-Allow-Credentials: [true]
+Vary: [Origin, Accept-Encoding]
+Set-Cookie: [encrypted_store_cookie=!2J1bMJYBw96L+2z1aB4jZvlW+BpkS/JVXfdrTrebxLmA3lSA2TosiFZ6euCTtSHm22vYyTBaDs8aBYw=; expires=Tue, 09-Oct-2018 01:25:53 GMT; path=/]
+#status#: [HTTP/1.1 200 OK]
+X-XSS-Protection: [1; mode=block]
+Content-Type: [application/json; charset=utf-8]
+
+{"statusCode":200,"result":[{"accessCodeId":"19998","cancelledDateTime":"","ccLastFour":"","confirmationNumber":"","cost":0,"createdBy":"","createdDateTime":"2018-08-23T13:20:38.077Z","endValidDateTime":"","entitlementId":"9336789c583ff2a2b1c5d0af752752c3","entitlementName":"Executive Gold Guest Pass","entitlementType":"AdmissionTicket","expirationDateTime":"2079-12-31T05:00:00.000Z","firstUsedAccessId":"","firstUsedDateTime":"","guestFirstName":"","guestLastName":"","guestId":"54c55c81-a6d7-11e8-aacc-f38a78e072d2","guestList":[],"issuedDateTime":"2018-08-23T13:20:38.076Z","lastUpdatedDateTime":"","lastUpdatedBy":"","lastUsedDateTime":"","nodeNumber":"135","orderItemId":"","ownerId":"54c55c81-a6d7-11e8-aacc-f38a78e072d2","plu":"110119998000","productSkuId":"","purchasedDateTime":"","purchaserId":"","redeemedDateTime":"","salesProgramId":"","sourceOrderDateTime":"","sourceOrderId":"","sourceSystem":"Galaxy","startValidDateTime":"","templateId":"","transactionNumber":"89235","visualId":"199980100135002002178","company":"1","status":"Active","uepType":"","accessCodeType":"EXECUTIVE_BADGE"}],"resultCode":"Success","message":"The entitlements were found."}</detail>
+        <icon>rest_request_step.png</icon>
+        <testCaseName>Entitlements</testCaseName>
+        <testStepName>GET : /Entitlements?mediaId={visualId}</testStepName>
+        <testSuiteName>Smoke</testSuiteName>
+      </error>
+    </failedTestSteps>
+  </testCase>
+</testSuiteResults>
