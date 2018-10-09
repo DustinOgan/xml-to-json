@@ -8,6 +8,10 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 
@@ -18,27 +22,10 @@ import lombok.Builder;
 
 @XmlRootElement(name="testSuiteResults")
 @XmlAccessorType(XmlAccessType.FIELD)
-
+@JsonRootName(value ="testSuiteResults")
 public class TestSuiteResults {
 
     @XmlElement
-    String message;
-
-    @XmlElement
-    String name;
-
-    @XmlElement
-    String order;
-    
-    @XmlElement
-    String started;
-    
-    @XmlElement
-    String status;
-    
-    @XmlElement
-    String timeTaken;
-
-    @XmlElement
+    @JsonProperty
     ArrayList<TestCase> testCase;
 }

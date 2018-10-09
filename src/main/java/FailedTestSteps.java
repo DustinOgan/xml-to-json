@@ -1,5 +1,7 @@
 import javax.xml.bind.annotation.XmlElement;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
@@ -16,6 +18,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 public class FailedTestSteps{
     
     @XmlElement
+    @JsonProperty
     ArrayList<Error> error;
 
 
