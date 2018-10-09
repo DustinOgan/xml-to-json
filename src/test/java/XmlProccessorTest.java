@@ -55,8 +55,7 @@ public class XmlProccessorTest {
         return testCaseArray;
     }
     private TestSuiteResults buildTestSuiteResults(ArrayList<TestCase> testCases) {
-        TestSuiteResults testSuiteResults = TestSuiteResults.builder().name("name").message("message").order("order")
-                .started("started").status("status").testCase(testCases).timeTaken("timeTaken").build();
+        TestSuiteResults testSuiteResults = TestSuiteResults.builder().testCase(testCases).build();
         return testSuiteResults;
     }
 

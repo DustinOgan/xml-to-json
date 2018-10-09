@@ -19,7 +19,7 @@ public class FailedTestSteps{
     
     @XmlElement
     @JsonProperty
-    ArrayList<Error> error;
+    ArrayList<FailedTestSteps> error;
 
 
 }

@@ -9,9 +9,11 @@ import javax.xml.bind.Unmarshaller;
 
 public class XmlProccessor {
      public static void proccessClassToXml(TestSuiteResults result)throws JAXBException, FileNotFoundException{    
+        
         JAXBContext contextObj = JAXBContext.newInstance(TestSuiteResults.class);
         Marshaller marshallerObj = contextObj.createMarshaller();
         marshallerObj.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        marshallerObj.setProperty("jaxb.encoding", "UTF-8");
         marshallerObj.marshal(result, new FileOutputStream("TestSuiteResults.xml"));        
     }
 
