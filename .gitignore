@@ -1,2 +1,7 @@
 gradle.properties
 *.class
+*.bin
+*.idx
+*.html
+*.js
+*.css
