@@ -5,3 +5,6 @@ gradle.properties
 *.html
 *.js
 *.css
+.*
+build/*S
+TestSuiteResults.xml
