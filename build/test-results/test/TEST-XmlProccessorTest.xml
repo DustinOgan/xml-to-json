@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="XmlProccessorTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-10-08T10:36:23" hostname="Gaming1" time="0.071">
-  <properties/>
-  <testcase name="testProccessXMLtoClass" classname="XmlProccessorTest" time="0.064"/>
-  <testcase name="testProccessMethod2" classname="XmlProccessorTest" time="0.006"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
